@@ -1,0 +1,9 @@
+2020-05-13.00:03:50 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStarting:55  Starting UserRepositoryTest on DESKTOP-OQ80M79 with PID 11112 (started by su in D:\study\IntelliJ IDEA 2019.2.1\CloudMusic\spring-boot-review\spring-boot-jpa)
+2020-05-13.00:03:50 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStartupProfileInfo:655  The following profiles are active: dev
+2020-05-13.00:03:55 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStarted:61  Started UserRepositoryTest in 5.785 seconds (JVM running for 7.053)
+2020-05-13.00:04:50 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStarting:55  Starting UserRepositoryTest on DESKTOP-OQ80M79 with PID 18196 (started by su in D:\study\IntelliJ IDEA 2019.2.1\CloudMusic\spring-boot-review\spring-boot-jpa)
+2020-05-13.00:04:50 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStartupProfileInfo:655  The following profiles are active: dev
+2020-05-13.00:04:55 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStarted:61  Started UserRepositoryTest in 5.481 seconds (JVM running for 6.702)
+2020-05-13.00:32:08 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStarting:55  Starting UserRepositoryTest on DESKTOP-OQ80M79 with PID 11956 (started by su in D:\study\IntelliJ IDEA 2019.2.1\CloudMusic\spring-boot-review\spring-boot-jpa)
+2020-05-13.00:32:08 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStartupProfileInfo:655  The following profiles are active: dev
+2020-05-13.00:32:12 INFO  [main] com.soft1851.springboot.jpa.dao.UserRepositoryTest.logStarted:61  Started UserRepositoryTest in 5.612 seconds (JVM running for 6.876)
