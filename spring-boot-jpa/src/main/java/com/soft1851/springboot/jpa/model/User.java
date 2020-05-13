@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 /**
  * @author su
@@ -14,20 +15,37 @@ import javax.persistence.*;
  * @Date 2020/5/12
  * @Version 1.0
  **/
+@Entity
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@NoArgsConstructor
 public class User {
-
+    /**
+     * 主键，策略为自增
+     */
     @Id
-    @GeneratedValue
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    /**
+     * nullable = false为非空约束，unique = true是唯一约束
+     */
     @Column(nullable = false, unique = true)
     private String userName;
+
     @Column(nullable = false)
     private String password;
-    @Column(nullable = false)
-    private int age;
+
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(length = 32)
+    private String nickName;
+
+    @Column
+    private Integer age;
+
+    @Column
+    private LocalDateTime regTime;
 }
