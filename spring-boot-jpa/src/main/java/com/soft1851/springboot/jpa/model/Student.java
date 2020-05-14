@@ -36,9 +36,6 @@ public class Student {
     @Column(name = "age", nullable = false)
     private Integer age;
 
-    @Column(name = "clazz_Id", nullable = false)
-    private Integer clazzId;
-
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "student_course", joinColumns = @JoinColumn(name = "student_id"),

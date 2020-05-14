@@ -49,7 +49,7 @@ class CascadeRepositoryTest {
         Clazz clazz = clazzRepository.findClazzByIdEquals(1);
         clazz.setStudentList(students);
         System.out.println(clazz);
-        clazzRepository.deleteById(1);
+//        clazzRepository.deleteById(1);
     }
 
     @Test
