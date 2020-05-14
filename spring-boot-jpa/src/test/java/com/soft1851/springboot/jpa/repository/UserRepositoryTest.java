@@ -123,17 +123,17 @@ class UserRepositoryTest {
     }
 
 
-    @Test
-    void findTopByOrderByAgeDesc() {
-        log.info(userRepository.findTopByOrderByAgeDesc().toString());
-    }
+//    @Test
+//    void findTopByOrderByAgeDesc() {
+//        log.info(userRepository.findTopByOrderByAgeDesc().toString());
+//    }
 
 
-    @Test
-    public void testPageQuery()  {
-        Pageable pageable = PageRequest.of(0, 10, Sort.Direction.ASC,"id");
-        userRepository.findALL(pageable).getContent().forEach(System.out::println);
-        userRepository.findByNickName("aa", pageable);
-
-    }
+//    @Test
+//    public void testPageQuery()  {
+//        Pageable pageable = PageRequest.of(0, 10, Sort.Direction.ASC,"id");
+//        userRepository.findALL(pageable).getContent().forEach(System.out::println);
+//        userRepository.findByNickName("aa", pageable);
+//
+//    }
 }

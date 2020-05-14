@@ -1,8 +1,6 @@
-package com.soft1851.springboot.jpa.repository;
+package com.soft1851.springboot.jpa.repository.test2;
 
 import com.soft1851.springboot.jpa.model.User;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -10,60 +8,39 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
-
 /**
- * @author Su
- * @className SwaggerConfiguration
- * @Description TODO
- * @Date 2020/5/12 20:25
+ * @author su
+ * @className UserTest2Repository
+ * @Description 基础的UserRepository，从父接口继承CRUD findBy返回一个User，findUsersBy返回一组User
+ * @Date 2020/5/14
  * @Version 1.0
  **/
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserTest2Repository extends JpaRepository<User, Long> {
 
     /**
+     * 根据方法名解析：按userName和password相等查询唯一记录
      *
      * @param userName
-     * @return User
-     */
-    User findByUserName(String userName);
-
-    /**
-     *
-     * @param username
-     * @param email
-     * @return User
-     */
-    User findByUserNameOrEmail(String username,String email);
-
-    /**
-     *
-     * @param userName
-     * @return Long
-     */
-    Long countByUserName(String userName);
-
-    /**
-     *
-     * @param email
-     * @return List<User>
-     */
-    List<User> findByEmailLike(String email);
-
-    /**
-     *
-     * @param userName
-     * @return User
-     */
-    User findByUserNameIgnoreCase(String userName);
-
-
-    /**
-     *
-     * @param email
+     * @param password
      * @return
      */
-    List<User> findByUserNameOrderByEmailDesc(String email);
+    User findByUserNameEqualsAndPasswordEquals(String userName, String password);
+
+    /**
+     * 根据方法名解析：按nickName模糊查询一组记录
+     *
+     * @param nickName
+     * @return
+     */
+    List<User> findUsersByNickNameLike(String nickName);
+
+    /**
+     * 根据方法名解析：查询年龄大于指定age的所有用户
+     *
+     * @param age
+     * @return
+     */
+    List<User> findUsersByAgeGreaterThan(int age);
 
     /**
      * 自定义JPQL查询，类似 Hibernate的 HQL语法，在接口上使用 @Query
@@ -99,25 +76,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
     @Query(value = "insert into user(user_name, password,email) values (:userName, :password,:email)", nativeQuery = true)
     int insertUser(@Param("userName") String userName, @Param("password") String password, @Param("email") String email);
-
-
-    @Query("select u from User u")
-    Page<User> findALL(Pageable pageable);
-
-//    @Query(value = "select * from user u where u.nick_name = ?1", nativeQuery = true)
-//    Page<User> findByNickName(String nickName, Pageable pageable);
-
-
-    @Transactional(timeout = 10,rollbackFor = RuntimeException.class)
-    @Modifying
-    @Query("update User set userName = ?1 where id = ?2")
-    int modifyById(String  userName, Long id);
-
-
-//    User findTopByOrderByAgeDesc();
-
-
-
-
-
 }

@@ -1,14 +1,13 @@
 package com.soft1851.springboot.jpa.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author su
@@ -28,13 +27,21 @@ public class Student {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long studentId;
+    @Column(name = "id", nullable = false)
+    private Integer id;
 
-    private Long clazzId;
-
+    @Column(name = "student_name", nullable = false, length = 30)
     private String studentName;
 
-    private String hometown;
+    @Column(name = "age", nullable = false)
+    private Integer age;
 
-    private String birthday;
+    @Column(name = "clazz_Id", nullable = false)
+    private Integer clazzId;
+
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name = "student_course", joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courseList;
 }

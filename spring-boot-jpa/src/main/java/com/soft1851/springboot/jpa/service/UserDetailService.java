@@ -14,7 +14,7 @@ import org.springframework.data.domain.Pageable;
  **/
 public interface UserDetailService {
 
-    Page<UserDetail> findByCondition(UserDetailParam detailParam, Pageable pageable);
+//    Page<UserDetail> findByCondition(UserDetailParam detailParam, Pageable pageable);
 
 
 }
