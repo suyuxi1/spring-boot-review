@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * @Date 2020/5/17
  * @Version 1.0
  **/
-@Service
+//@Service
 public class PropertyServiceForJasyptStarter {
 
     @Value("${encrypted.property}")

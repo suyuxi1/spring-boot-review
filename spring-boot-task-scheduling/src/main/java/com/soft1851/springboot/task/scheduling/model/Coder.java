@@ -9,9 +9,9 @@ import javax.persistence.*;
 
 /**
  * @author su
- * @className Cron
+ * @className Coder
  * @Description TODO
- * @Date 2020/5/15
+ * @Date 2020/5/17
  * @Version 1.0
  **/
 
@@ -20,16 +20,19 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cron {
+public class Coder {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cronId;
+    private Integer id;
 
+    @Column(name = "name",nullable = false,length = 30)
+    private String name;
 
-    @Column(name = "cron_name",nullable = false,length = 30)
-    private String cronName;
+    @Column(name = "avatar",nullable = false,length = 225)
+    private String avatar;
 
+    @Column(name = "url",nullable = false,length = 225)
+    private String url;
 
-    @Column(name = "cron",nullable = false,length = 50)
-    private String cron;
 }
